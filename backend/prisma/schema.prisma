@@ -1,6 +1,3 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
 datasource db {
   provider             = "mysql"
   url                  = env("DATABASE_URL")
@@ -12,23 +9,8 @@ generator client {
   previewFeatures = ["referentialIntegrity"]
 }
 
-// model Joke {
-//   authorId Int?
-//   id       Int     @id @default(autoincrement())
-//   joke     String?
-//   User     User?   @relation(fields: [authorId], references: [id])
-
-//   @@index([authorId], name: "author")
-// }
-
-// model User {
-//   id   Int    @id @default(autoincrement())
-//   name String
-//   Post Joke[]
-// }
-
 model SecretModel {
-  id     Int    @id
+  id     Int    @id @default(autoincrement())
   name   String @db.VarChar(255)
   secret String @db.VarChar(255)
 }

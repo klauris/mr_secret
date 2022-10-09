@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 function SiderBar() {
   return (
     <>
-      <div className="flex flex-col items-center  min-h-screen w-[100px] bg-maximum-yellow text-white shadow-xl">
+      <div className="flex flex-col items-center  h-[calc(100vh-70px)] w-[110px] bg-maximum-yellow text-white shadow-xl">
         <ul>
           <li className="py-4">
             <NavLink to="/">

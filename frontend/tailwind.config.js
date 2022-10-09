@@ -8,6 +8,9 @@ module.exports = {
         "tickle-me-pink": "#FF7B9C",
         "maximum-yellow": "#FFC759",
       },
+      backgroundImage: {
+        "form-img": "url('/public/form-background.png')",
+      },
     },
   },
   plugins: [],

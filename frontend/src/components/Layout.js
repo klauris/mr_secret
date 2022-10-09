@@ -8,7 +8,7 @@ function Layout({ children }) {
 
       <div className="flex ">
         <SiderBar />
-        <main>{children}</main>
+        <main className="w-full ">{children}</main>
       </div>
     </>
   );
