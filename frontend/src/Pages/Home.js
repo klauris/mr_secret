@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import useSWR from "swr";
 import Secret from "../components/Secret";
+import { Link } from "react-router-dom";
 
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
 function Home() {
-  const [page, setPage] = useState(1);
   const { data, error } = useSWR(`http://localhost:3000/secrets`, fetcher);
 
   if (error) return <div>failed to load</div>;
@@ -15,6 +15,11 @@ function Home() {
 
   return (
     <>
+      <div>
+        <h1 className="text-center text-3xl p-2 font-extrabold text-transparent  bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">
+          Share your secrets with the internet
+        </h1>
+      </div>{" "}
       <div
         className="bg-slate-100 grid grid-cols-1 justify-items-center mt-4
 

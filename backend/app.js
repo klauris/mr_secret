@@ -16,6 +16,15 @@ app.get("/secrets", async (req, res) => {
   res.json(secret);
 });
 
+app.get("/secrets/:id", async (req, res) => {
+  const { id } = req.params;
+
+  const secret = await prisma.SecretModel.findUnique({
+    where: { id: Number(id) },
+  });
+  res.send(secret);
+});
+
 app.post("/post_secret", async (req, res) => {
   const { id, name, secret } = req.body;
 
