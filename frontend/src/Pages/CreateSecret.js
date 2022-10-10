@@ -34,7 +34,7 @@ function CreateSecret() {
 
   return (
     <div className="flex items-center justify-center h-full ">
-      <div className=" w-2/3 h-1/2  sm:w-1/3 bg-form-img rounded-lg pt-6 ">
+      <div className=" w-2/3 h-3/4  sm:w-1/3 bg-form-img rounded-lg pt-6 ">
         <p className="text-center pt-4 text-2xl pb-4 text-maximum-yellow ">
           Create Your Secret
         </p>
@@ -66,7 +66,7 @@ function CreateSecret() {
             className="block p-2.5 w-full  bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400
       focus:outline-none focus:border-maximum-yellow focus:ring-1 focus:ring-maximum-yellow"
             placeholder="Your message..."
-            maxLength="200"
+            maxLength="150"
           ></textarea>
 
           <div className="pt-6 flex justify-center">

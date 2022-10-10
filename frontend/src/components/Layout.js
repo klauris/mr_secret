@@ -1,4 +1,5 @@
 import React from "react";
+import Footer from "./Footer";
 import Header from "./Header";
 import SiderBar from "./SiderBar";
 function Layout({ children }) {
@@ -10,6 +11,8 @@ function Layout({ children }) {
         <SiderBar />
         <main className="w-full ">{children}</main>
       </div>
+
+      <Footer />
     </>
   );
 }
