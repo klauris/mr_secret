@@ -1,15 +1,26 @@
 import React, { useState } from "react";
 import useSWR from "swr";
 import Secret from "../components/Secret";
-import { Link } from "react-router-dom";
+import ClipLoader from "react-spinners/ClipLoader";
+import FailedToLoad from "./FailedToLoad";
 
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
 function Home() {
   const { data, error } = useSWR(`http://localhost:3000/secrets`, fetcher);
 
-  if (error) return <div>failed to load</div>;
-  if (!data) return <div>loading...</div>;
+  if (error)
+    return (
+      <div className="flex h-full items-center justify-center bg-slate-100">
+        <FailedToLoad />
+      </div>
+    );
+  if (!data)
+    return (
+      <div className="flex items-center justify-center h-full">
+        <ClipLoader size={100} />
+      </div>
+    );
 
   console.log(data);
 

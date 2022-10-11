@@ -1,9 +1,10 @@
 import Layout from "./components/Layout";
 import Home from "./Pages/Home";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
 import CreateSecret from "./Pages/CreateSecret";
-import Stuff from "./Pages/Stuff";
-import Dynamic from "./Pages/Dynamic";
+import SingleSecret from "./Pages/SingleSecret";
+import Test from "./Pages/Test";
 
 function App() {
   return (
@@ -14,8 +15,7 @@ function App() {
             <Route path="/" element={<Home />} />
 
             <Route path="/createSecret" element={<CreateSecret />} />
-            <Route path="/stuff" element={<Stuff />} />
-            <Route path="/stuff/:id" element={<Dynamic />} />
+            <Route path="/secret/:id" element={<SingleSecret />} />
           </Routes>
         </Layout>
       </Router>

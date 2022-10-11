@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function Secret(props) {
   const { name, secret, id } = props;
   return (
-    <Link to={`/stuff/${id}`}>
+    <Link to={`/secret/${id}`}>
       <div
         onClick={() => console.log(`card with id:${id} clicked`)}
         key={id}

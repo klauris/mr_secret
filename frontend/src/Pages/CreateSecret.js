@@ -33,8 +33,8 @@ function CreateSecret() {
   };
 
   return (
-    <div className="flex items-center justify-center h-full ">
-      <div className=" w-2/3 h-3/4  sm:w-1/3 bg-form-img rounded-lg pt-6 ">
+    <div className="flex mt-10 justify-center h-full ">
+      <div className=" w-2/3 h-[450px]  sm:w-1/3 bg-form-img rounded-lg pt-6 ">
         <p className="text-center pt-4 text-2xl pb-4 text-maximum-yellow ">
           Create Your Secret
         </p>
