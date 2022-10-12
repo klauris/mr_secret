@@ -1,11 +1,11 @@
-import React from "react";
 import { AiFillPlusCircle, AiFillHome } from "react-icons/ai";
 import { NavLink } from "react-router-dom";
 
 function SiderBar() {
+  //h-[calc(100vh-70px)]
   return (
     <>
-      <div className="flex flex-col items-center  h-[calc(100vh-70px)] w-[110px] bg-maximum-yellow text-white shadow-xl">
+      <div className="flex flex-col items-center   w-[110px] h-vh   bg-maximum-yellow text-white shadow-xl">
         <ul>
           <li className="py-4">
             <NavLink to="/">

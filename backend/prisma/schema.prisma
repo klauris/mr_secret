@@ -23,6 +23,7 @@ model CommentModel {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   comment   String
+  name      String
 
   SecretModel   SecretModel? @relation(fields: [secretModelId], references: [id])
   secretModelId Int

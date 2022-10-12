@@ -4,7 +4,6 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import CreateSecret from "./Pages/CreateSecret";
 import SingleSecret from "./Pages/SingleSecret";
-import Test from "./Pages/Test";
 
 function App() {
   return (

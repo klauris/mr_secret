@@ -25,6 +25,28 @@ app.get("/secrets/:id", async (req, res) => {
   res.send(secret);
 });
 
+app.get("/commentList/:id", async (req, res) => {
+  // const { id } = req.body;
+  const { id } = req.params;
+
+  const comments = await prisma.CommentModel.findMany({
+    where: { secretModelId: parseInt(id) },
+  });
+  res.send(comments);
+});
+
+app.post("/comments/", async (req, res) => {
+  const { secretModelId, comment, name } = req.body;
+  await prisma.CommentModel.create({
+    data: {
+      secretModelId,
+      comment,
+      name,
+    },
+  });
+  res.send("comment posted");
+});
+
 app.post("/post_secret", async (req, res) => {
   const { id, name, secret } = req.body;
 

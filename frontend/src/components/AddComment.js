@@ -1,11 +1,38 @@
-import React from "react";
+import { useRef } from "react";
 
-function AddComment() {
+function AddComment({ id, mutate }) {
+  const formRef = useRef();
+  const commentRef = useRef();
+  const nameRef = useRef();
+
+  const commentSubmitHandler = async (e) => {
+    e.preventDefault();
+
+    const newComment = {
+      comment: commentRef.current.value,
+      name: nameRef.current.value,
+      secretModelId: parseInt(id),
+    };
+
+    await fetch("http://localhost:3000/comments", {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newComment),
+    });
+
+    formRef.current.reset();
+    mutate(`http://localhost:3000/commentList/${id}`);
+  };
+
   return (
     <div>
-      <form className="px-6">
+      <form className="px-6" ref={formRef} onSubmit={commentSubmitHandler}>
         <input
           required
+          ref={nameRef}
           type="text"
           placeholder="Enter Your Name"
           className="mt-6 block w-full px-3 py-2 bg-white   rounded-md text-sm shadow-sm placeholder-slate-400
@@ -19,6 +46,7 @@ function AddComment() {
         </span>
         <textarea
           required
+          ref={commentRef}
           type="text"
           id="message"
           rows="5"
